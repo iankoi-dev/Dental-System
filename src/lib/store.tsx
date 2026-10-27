@@ -1,7 +1,17 @@
 import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from "react";
 import {
-  AUDIT, BATCHES, PATIENTS, QUEUE, SCHEDULES,
-  type Batch, type Patient, type QueueEntry, type Role, type Schedule, DEMO_USERS, ROLE_LABELS,
+  AUDIT,
+  BATCHES,
+  PATIENTS,
+  QUEUE,
+  SCHEDULES,
+  type Batch,
+  type Patient,
+  type QueueEntry,
+  type Role,
+  type Schedule,
+  DEMO_USERS,
+  ROLE_LABELS,
 } from "./mock-data";
 
 type Audit = (typeof AUDIT)[number];
@@ -55,13 +65,45 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     (action: string, module: string, record: string, details: string, outcome = "Success") => {
       const now = new Date();
       const ts = `2026-10-19 ${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
-      setAudit((a) => [{ id: `A-${9100 + a.length}`, ts, user: user?.name ?? "System", role: role ? ROLE_LABELS[role] : "—", action, module, record, outcome, details }, ...a]);
+      setAudit((a) => [
+        {
+          id: `A-${9100 + a.length}`,
+          ts,
+          user: user?.name ?? "System",
+          role: role ? ROLE_LABELS[role] : "—",
+          action,
+          module,
+          record,
+          outcome,
+          details,
+        },
+        ...a,
+      ]);
     },
     [user, role],
   );
 
   return (
-    <Ctx.Provider value={{ hydrated, role, setRole, user, patients, setPatients, queue, setQueue, overlapUsed, setOverlapUsed, schedules, setSchedules, batches, setBatches, audit, log }}>
+    <Ctx.Provider
+      value={{
+        hydrated,
+        role,
+        setRole,
+        user,
+        patients,
+        setPatients,
+        queue,
+        setQueue,
+        overlapUsed,
+        setOverlapUsed,
+        schedules,
+        setSchedules,
+        batches,
+        setBatches,
+        audit,
+        log,
+      }}
+    >
       {children}
     </Ctx.Provider>
   );
