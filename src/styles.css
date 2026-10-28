@@ -112,7 +112,10 @@
   --neutral-soft: oklch(0.95 0.004 250);
   --ai: oklch(0.47 0.1 200);
   --ai-soft: oklch(0.96 0.03 200);
-  --gradient-hero: radial-gradient(1200px 500px at 85% -10%, oklch(0.9 0.06 190 / 70%), transparent 60%), radial-gradient(800px 400px at -10% 30%, oklch(0.93 0.04 230 / 70%), transparent 60%), var(--background);
+  --gradient-hero:
+    radial-gradient(1200px 500px at 85% -10%, oklch(0.9 0.06 190 / 70%), transparent 60%),
+    radial-gradient(800px 400px at -10% 30%, oklch(0.93 0.04 230 / 70%), transparent 60%),
+    var(--background);
   --chart-1: oklch(0.51 0.09 186);
   --chart-2: oklch(0.52 0.2 262);
   --chart-3: oklch(0.67 0.16 58);
@@ -175,16 +178,32 @@
 }
 
 @layer base {
-  html { font-family: var(--font-sans); }
-  body { line-height: 1.5; -webkit-font-smoothing: antialiased; }
-  :focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
+  html {
+    font-family: var(--font-sans);
+  }
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
 }
 
-@utility bg-hero { background: var(--gradient-hero); }
-@utility shadow-soft { box-shadow: var(--shadow-soft); }
-@utility shadow-lift { box-shadow: var(--shadow-lift); }
+@utility bg-hero {
+  background: var(--gradient-hero);
+}
+@utility shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+@utility shadow-lift {
+  box-shadow: var(--shadow-lift);
+}
 @utility dot-grid {
   background-image: radial-gradient(oklch(0.51 0.09 186 / 14%) 1px, transparent 1px);
   background-size: 22px 22px;
 }
-@utility preserve-3d { transform-style: preserve-3d; }
+@utility preserve-3d {
+  transform-style: preserve-3d;
+}

@@ -17,10 +17,22 @@ export function OdontogramWorkspace({ patientId }: { patientId: string }) {
         <Legend />
       </div>
       <Panel>
-        <ToothPanel key={sel + teeth[sel].condition + teeth[sel].history.length} tooth={teeth[sel]} schedules={schedules.filter((s) => s.patientId === patientId)} editable={canEditClinical(role)}
-          onSave={(t) => { setTeeth((all) => ({ ...all, [t.number]: t })); log("Tooth record update", "Odontogram", `${patientId} / ${t.number}`, "Tooth-level documentation updated."); }} />
+        <ToothPanel
+          key={sel + teeth[sel].condition + teeth[sel].history.length}
+          tooth={teeth[sel]}
+          schedules={schedules.filter((s) => s.patientId === patientId)}
+          editable={canEditClinical(role)}
+          onSave={(t) => {
+            setTeeth((all) => ({ ...all, [t.number]: t }));
+            log(
+              "Tooth record update",
+              "Odontogram",
+              `${patientId} / ${t.number}`,
+              "Tooth-level documentation updated.",
+            );
+          }}
+        />
       </Panel>
     </div>
   );
 }
-

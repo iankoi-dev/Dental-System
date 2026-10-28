@@ -20,6 +20,12 @@ import { Route as AdminRolesRouteImport } from './routes/admin.roles'
 import { Route as AdminTreatmentPlansRouteImport } from './routes/admin.treatment-plans'
 import { Route as AdminUsersRouteImport } from './routes/admin.users'
 import { Route as PatientDashboardRouteImport } from './routes/patient.dashboard'
+import { Route as PatientInstructionsRouteImport } from './routes/patient.instructions'
+import { Route as PatientNotificationsRouteImport } from './routes/patient.notifications'
+import { Route as PatientProfileRouteImport } from './routes/patient.profile'
+import { Route as PatientRecordsRouteImport } from './routes/patient.records'
+import { Route as PatientSchedulesRouteImport } from './routes/patient.schedules'
+import { Route as PatientToothHistoryRouteImport } from './routes/patient.tooth-history'
 import { Route as StaffAiAssistantRouteImport } from './routes/staff.ai-assistant'
 import { Route as StaffAuditLogsRouteImport } from './routes/staff.audit-logs'
 import { Route as StaffChangeImpactRouteImport } from './routes/staff.change-impact'
@@ -88,6 +94,36 @@ const AdminUsersRoute = AdminUsersRouteImport.update({
 const PatientDashboardRoute = PatientDashboardRouteImport.update({
   id: '/patient/dashboard',
   path: '/patient/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PatientInstructionsRoute = PatientInstructionsRouteImport.update({
+  id: '/patient/instructions',
+  path: '/patient/instructions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PatientNotificationsRoute = PatientNotificationsRouteImport.update({
+  id: '/patient/notifications',
+  path: '/patient/notifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PatientProfileRoute = PatientProfileRouteImport.update({
+  id: '/patient/profile',
+  path: '/patient/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PatientRecordsRoute = PatientRecordsRouteImport.update({
+  id: '/patient/records',
+  path: '/patient/records',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PatientSchedulesRoute = PatientSchedulesRouteImport.update({
+  id: '/patient/schedules',
+  path: '/patient/schedules',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PatientToothHistoryRoute = PatientToothHistoryRouteImport.update({
+  id: '/patient/tooth-history',
+  path: '/patient/tooth-history',
   getParentRoute: () => rootRouteImport,
 } as any)
 const StaffAiAssistantRoute = StaffAiAssistantRouteImport.update({
@@ -174,6 +210,12 @@ export interface FileRoutesByFullPath {
   '/admin/treatment-plans': typeof AdminTreatmentPlansRoute
   '/admin/users': typeof AdminUsersRoute
   '/patient/dashboard': typeof PatientDashboardRoute
+  '/patient/instructions': typeof PatientInstructionsRoute
+  '/patient/notifications': typeof PatientNotificationsRoute
+  '/patient/profile': typeof PatientProfileRoute
+  '/patient/records': typeof PatientRecordsRoute
+  '/patient/schedules': typeof PatientSchedulesRoute
+  '/patient/tooth-history': typeof PatientToothHistoryRoute
   '/staff/ai-assistant': typeof StaffAiAssistantRoute
   '/staff/audit-logs': typeof StaffAuditLogsRoute
   '/staff/change-impact': typeof StaffChangeImpactRoute
@@ -201,6 +243,12 @@ export interface FileRoutesByTo {
   '/admin/treatment-plans': typeof AdminTreatmentPlansRoute
   '/admin/users': typeof AdminUsersRoute
   '/patient/dashboard': typeof PatientDashboardRoute
+  '/patient/instructions': typeof PatientInstructionsRoute
+  '/patient/notifications': typeof PatientNotificationsRoute
+  '/patient/profile': typeof PatientProfileRoute
+  '/patient/records': typeof PatientRecordsRoute
+  '/patient/schedules': typeof PatientSchedulesRoute
+  '/patient/tooth-history': typeof PatientToothHistoryRoute
   '/staff/ai-assistant': typeof StaffAiAssistantRoute
   '/staff/audit-logs': typeof StaffAuditLogsRoute
   '/staff/change-impact': typeof StaffChangeImpactRoute
@@ -229,6 +277,12 @@ export interface FileRoutesById {
   '/admin/treatment-plans': typeof AdminTreatmentPlansRoute
   '/admin/users': typeof AdminUsersRoute
   '/patient/dashboard': typeof PatientDashboardRoute
+  '/patient/instructions': typeof PatientInstructionsRoute
+  '/patient/notifications': typeof PatientNotificationsRoute
+  '/patient/profile': typeof PatientProfileRoute
+  '/patient/records': typeof PatientRecordsRoute
+  '/patient/schedules': typeof PatientSchedulesRoute
+  '/patient/tooth-history': typeof PatientToothHistoryRoute
   '/staff/ai-assistant': typeof StaffAiAssistantRoute
   '/staff/audit-logs': typeof StaffAuditLogsRoute
   '/staff/change-impact': typeof StaffChangeImpactRoute
@@ -258,6 +312,12 @@ export interface FileRouteTypes {
     | '/admin/treatment-plans'
     | '/admin/users'
     | '/patient/dashboard'
+    | '/patient/instructions'
+    | '/patient/notifications'
+    | '/patient/profile'
+    | '/patient/records'
+    | '/patient/schedules'
+    | '/patient/tooth-history'
     | '/staff/ai-assistant'
     | '/staff/audit-logs'
     | '/staff/change-impact'
@@ -285,6 +345,12 @@ export interface FileRouteTypes {
     | '/admin/treatment-plans'
     | '/admin/users'
     | '/patient/dashboard'
+    | '/patient/instructions'
+    | '/patient/notifications'
+    | '/patient/profile'
+    | '/patient/records'
+    | '/patient/schedules'
+    | '/patient/tooth-history'
     | '/staff/ai-assistant'
     | '/staff/audit-logs'
     | '/staff/change-impact'
@@ -312,6 +378,12 @@ export interface FileRouteTypes {
     | '/admin/treatment-plans'
     | '/admin/users'
     | '/patient/dashboard'
+    | '/patient/instructions'
+    | '/patient/notifications'
+    | '/patient/profile'
+    | '/patient/records'
+    | '/patient/schedules'
+    | '/patient/tooth-history'
     | '/staff/ai-assistant'
     | '/staff/audit-logs'
     | '/staff/change-impact'
@@ -335,6 +407,12 @@ export interface RootRouteChildren {
   RecoverAccountRoute: typeof RecoverAccountRoute
   StaffRoute: typeof StaffRouteWithChildren
   PatientDashboardRoute: typeof PatientDashboardRoute
+  PatientInstructionsRoute: typeof PatientInstructionsRoute
+  PatientNotificationsRoute: typeof PatientNotificationsRoute
+  PatientProfileRoute: typeof PatientProfileRoute
+  PatientRecordsRoute: typeof PatientRecordsRoute
+  PatientSchedulesRoute: typeof PatientSchedulesRoute
+  PatientToothHistoryRoute: typeof PatientToothHistoryRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -414,6 +492,48 @@ declare module '@tanstack/react-router' {
       path: '/patient/dashboard'
       fullPath: '/patient/dashboard'
       preLoaderRoute: typeof PatientDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/patient/instructions': {
+      id: '/patient/instructions'
+      path: '/patient/instructions'
+      fullPath: '/patient/instructions'
+      preLoaderRoute: typeof PatientInstructionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/patient/notifications': {
+      id: '/patient/notifications'
+      path: '/patient/notifications'
+      fullPath: '/patient/notifications'
+      preLoaderRoute: typeof PatientNotificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/patient/profile': {
+      id: '/patient/profile'
+      path: '/patient/profile'
+      fullPath: '/patient/profile'
+      preLoaderRoute: typeof PatientProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/patient/records': {
+      id: '/patient/records'
+      path: '/patient/records'
+      fullPath: '/patient/records'
+      preLoaderRoute: typeof PatientRecordsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/patient/schedules': {
+      id: '/patient/schedules'
+      path: '/patient/schedules'
+      fullPath: '/patient/schedules'
+      preLoaderRoute: typeof PatientSchedulesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/patient/tooth-history': {
+      id: '/patient/tooth-history'
+      path: '/patient/tooth-history'
+      fullPath: '/patient/tooth-history'
+      preLoaderRoute: typeof PatientToothHistoryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/staff/ai-assistant': {
@@ -578,6 +698,12 @@ const rootRouteChildren: RootRouteChildren = {
   RecoverAccountRoute: RecoverAccountRoute,
   StaffRoute: StaffRouteWithChildren,
   PatientDashboardRoute: PatientDashboardRoute,
+  PatientInstructionsRoute: PatientInstructionsRoute,
+  PatientNotificationsRoute: PatientNotificationsRoute,
+  PatientProfileRoute: PatientProfileRoute,
+  PatientRecordsRoute: PatientRecordsRoute,
+  PatientSchedulesRoute: PatientSchedulesRoute,
+  PatientToothHistoryRoute: PatientToothHistoryRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
